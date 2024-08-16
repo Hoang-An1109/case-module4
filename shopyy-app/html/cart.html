@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp,container-queries"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/css/cart.css">
+</head>
+<body>
+
+    <div id="header"></div>
+<div class="container mx-auto px-4 py-8">
+    <div class="bg-white rounded-lg shadow-md p-6">
+        <h1 class="text-2xl font-bold mb-6">Giỏ Hàng Của Bạn</h1>
+
+        <div class="mb-4 text-sm text-gray-500">
+            Nhấn vào mục Mã giảm giá ở cuối trang để hưởng miễn phí vận chuyển bạn nhé!
+        </div>
+
+        <table class="cart-table">
+            <thead>
+            <tr class="border-b">
+                <th class="w-1/12">
+                    <input type="checkbox" id="select-all" class="mr-2">
+                </th>
+                <th class="w-5/12">Sản Phẩm</th>
+
+                <th class="w-3/12">Đơn Giá</th>
+                <th class="w-3/12">Số Lượng</th>
+                <th class="w-2/12 price-column">Số Tiền</th>
+                <th class="w-1/12">Thao Tác</th>
+            </tr>
+            </thead>
+            <tbody id="cart-items">
+            </tbody>
+        </table>
+
+        <div class="flex justify-between items-center mb-4">
+            <div class="flex items-center">
+                <input type="checkbox" id="select-all-bottom" class="mr-2">
+                <label for="select-all-bottom">Chọn Tất Cả</label>
+            </div>
+            <button id="delete-all" class="text-[#0866FF] hover:underline">Xóa Tất Cả</button>
+        </div>
+
+        <div class="border-t pt-4">
+            <div class="flex justify-between items-center mb-2">
+                <span>Tổng thanh toán (<span id="selected-items-count">0</span> Sản Phẩm):</span>
+                <span class="text-2xl font-bold text-[#0866FF]">₫<span id="total-amount">0</span></span>
+            </div>
+            <div class="flex justify-end">
+                <button id="buy-selected" class="buy-button-disabled bg-[#0866FF] text-white px-8 py-2 rounded-sm hover:bg-[#0555c9] disabled:opacity-50 disabled:cursor-not-allowed">
+                    Mua Hàng
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+    <div id="footer"></div>
+<script>
+    $(document).ready(function () {
+        // $("#header").load("header_homepage.html")
+        $("#header").load("header_cart.html")
+        $("#footer").load("footer.html")
+    })
+</script>
+
+<script src="/js/cart.js"></script>
+</body>
+</html>
